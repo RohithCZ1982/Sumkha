@@ -211,6 +211,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Mobile Menu Toggle functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    function toggleMobileMenu() {
+        if (!mobileMenuToggle || !nav) return;
+        
+        const isActive = nav.classList.contains('active');
+        
+        if (isActive) {
+            // Close menu
+            nav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        } else {
+            // Open menu
+            nav.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+        }
+    }
+    
+    if (mobileMenuToggle && nav) {
+        // Multiple event listeners for maximum compatibility
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            toggleMobileMenu();
+        });
+        
+        mobileMenuToggle.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+            toggleMobileMenu();
+        }, { passive: false });
+        
+        // Close menu when a nav link is clicked (reuse navLinks from above)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside (with delay to avoid immediate close)
+        setTimeout(function() {
+            document.addEventListener('click', function(event) {
+                if (!nav.classList.contains('active')) return;
+                
+                const isClickInsideNav = nav.contains(event.target);
+                const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnToggle) {
+                    nav.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }, 200);
+    }
+    
     // Go to Top Button functionality
     const goToTopButton = document.getElementById('goToTop');
     

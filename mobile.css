@@ -1,0 +1,637 @@
+/* Mobile Responsive Styles - All mobile breakpoints and layouts */
+
+/* Mobile Menu Toggle Button - Hidden on Desktop, Shown on Mobile */
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* Tablet and below (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid var(--color-black);
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 8px 6px;
+        z-index: 1001;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        outline: none;
+    }
+    
+    .mobile-menu-toggle:active {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-black);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        pointer-events: none;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+    
+    /* Header adjustments */
+    .header .logo {
+        margin-left: 15px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    /* Navigation Menu for Mobile */
+    .header .nav {
+        position: fixed !important;
+        top: 70px !important;
+        left: 0 !important;
+        right: 0 !important;
+        background-color: var(--color-cream) !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out, padding-bottom 0.4s ease-in-out !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        z-index: 999 !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .header .nav.active {
+        max-height: 400px !important;
+        padding: 20px !important;
+    }
+    
+    .header .nav .nav-link {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+        text-align: left;
+        opacity: 0;
+        transition: opacity 0.3s ease 0.1s;
+    }
+    
+    .header .nav.active .nav-link {
+        opacity: 1;
+    }
+    
+    .header .nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding-top: 70px;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 0;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .profile-photo {
+        width: 200px;
+        height: 533px;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    
+    .hero-company {
+        font-size: 16px;
+    }
+    
+    .hero-tagline {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    /* Section Styles */
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 50px;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    /* About Section */
+    .about-text {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    
+    .lead-text {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .about-text p {
+        margin-bottom: 20px;
+    }
+    
+    /* Experience Section */
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    
+    .experience-card {
+        padding: 30px 20px;
+    }
+    
+    .card-number {
+        font-size: 40px;
+    }
+    
+    .card-title {
+        font-size: 22px;
+    }
+    
+    .card-description {
+        font-size: 15px;
+    }
+    
+    /* Portfolio Section */
+    .portfolio-grid {
+        column-count: 2;
+        column-gap: 15px;
+        margin-top: 40px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 15px;
+    }
+    
+    .portfolio-overlay i {
+        font-size: 36px;
+    }
+    
+    /* Contact Section */
+    .contact-item {
+        padding: 25px 20px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .contact-item i {
+        font-size: 22px;
+    }
+    
+    .contact-item h4 {
+        font-size: 18px;
+    }
+    
+    .contact-item a,
+    .contact-item p {
+        font-size: 15px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-text {
+        font-size: 13px;
+    }
+    
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 90px;
+        right: 20px;
+        font-size: 28px;
+    }
+    
+    .go-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+    
+    /* Video Modal */
+    .video-modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .video-modal-close {
+        top: -35px;
+        font-size: 28px;
+    }
+}
+
+/* Mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header */
+    .header {
+        min-height: 60px;
+    }
+    
+    .header .logo {
+        margin-left: 10px;
+        height: 60px;
+    }
+    
+    .mobile-menu-toggle {
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 6px 5px;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .header .nav {
+        top: 60px !important;
+    }
+    
+    .header .nav .nav-link {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding-top: 60px;
+    }
+    
+    .hero-content {
+        gap: 30px;
+        padding: 30px 0;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 400px;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+    
+    .hero-company {
+        font-size: 14px;
+    }
+    
+    .hero-tagline {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 50px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 15px;
+    }
+    
+    /* About */
+    .about-text {
+        font-size: 15px;
+    }
+    
+    .lead-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    /* Experience */
+    .experience-grid {
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .experience-card {
+        padding: 25px 15px;
+    }
+    
+    .card-number {
+        font-size: 36px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+    }
+    
+    .card-description {
+        font-size: 14px;
+    }
+    
+    /* Portfolio */
+    .portfolio-grid {
+        column-count: 1;
+        column-gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 10px;
+    }
+    
+    .portfolio-overlay i {
+        font-size: 32px;
+    }
+    
+    /* Contact */
+    .contact-item {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .contact-item i {
+        font-size: 20px;
+    }
+    
+    .contact-item h4 {
+        font-size: 17px;
+    }
+    
+    .contact-item a,
+    .contact-item p {
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 25px 0;
+    }
+    
+    .footer-text {
+        font-size: 12px;
+    }
+    
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 80px;
+        right: 15px;
+        font-size: 26px;
+    }
+    
+    .go-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 16px;
+    }
+    
+    /* Video Modal */
+    .video-modal-content {
+        width: 98%;
+        padding: 10px;
+    }
+    
+    .video-modal-close {
+        top: -30px;
+        font-size: 24px;
+    }
+}
+
+/* Small mobile devices (max-width: 360px) */
+@media (max-width: 360px) {
+    /* Container */
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Header */
+    .header {
+        min-height: 55px;
+    }
+    
+    .header .logo {
+        margin-left: 8px;
+        height: 55px;
+    }
+    
+    .mobile-menu-toggle {
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        padding: 5px 4px;
+    }
+    
+    .logo-img {
+        height: 28px;
+    }
+    
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .header .nav {
+        top: 55px !important;
+    }
+    
+    .header .nav .nav-link {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    
+    /* Hero */
+    .hero {
+        padding-top: 55px;
+    }
+    
+    .hero-content {
+        gap: 25px;
+        padding: 25px 0;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 320px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    
+    .hero-company {
+        font-size: 13px;
+    }
+    
+    .hero-tagline {
+        font-size: 15px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+    }
+    
+    /* About */
+    .about-text {
+        font-size: 14px;
+    }
+    
+    .lead-text {
+        font-size: 17px;
+    }
+    
+    /* Experience */
+    .experience-card {
+        padding: 20px 12px;
+    }
+    
+    .card-number {
+        font-size: 32px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    
+    .card-description {
+        font-size: 13px;
+    }
+    
+    /* Contact */
+    .contact-item {
+        padding: 18px 12px;
+    }
+    
+    .contact-item h4 {
+        font-size: 16px;
+    }
+    
+    .contact-item a,
+    .contact-item p {
+        font-size: 13px;
+    }
+    
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        bottom: 75px;
+        right: 10px;
+        font-size: 24px;
+    }
+    
+    .go-to-top {
+        width: 35px;
+        height: 35px;
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+    }
+}
+
