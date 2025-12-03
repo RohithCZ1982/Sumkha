@@ -485,6 +485,49 @@ section {
     transform: scale(1.2);
 }
 
+/* YouTube Icon Styling - Professional Style */
+.portfolio-youtube-overlay {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer;
+    pointer-events: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-youtube-overlay::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.portfolio-youtube-overlay i {
+    font-size: 40px;
+    color: var(--color-white);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-youtube-overlay::before {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(255, 0, 0, 0.6);
+    background-color: #FF0000;
+}
+
+.portfolio-item:hover .portfolio-youtube-overlay i {
+    transform: scale(1.05);
+    color: var(--color-white);
+}
+
 .portfolio-video {
     position: relative;
 }

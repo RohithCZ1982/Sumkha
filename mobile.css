@@ -231,6 +231,15 @@
         font-size: 36px;
     }
     
+    .portfolio-youtube-overlay::before {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .portfolio-youtube-overlay i {
+        font-size: 36px;
+    }
+    
     /* Contact Section */
     .contact-item {
         padding: 25px 20px;
@@ -432,6 +441,15 @@
     
     .portfolio-overlay i {
         font-size: 32px;
+    }
+    
+    .portfolio-youtube-overlay::before {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .portfolio-youtube-overlay i {
+        font-size: 30px;
     }
     
     /* Contact */
